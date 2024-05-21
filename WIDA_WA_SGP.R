@@ -18,8 +18,8 @@ SGPstateData <- SGPmatrices::addBaselineMatrices("WIDA", "2023", "WIDA_WA")
 ### Run analyses
 WIDA_WA_SGP <- abcSGP(
 		WIDA_WA_Data_LONG,
-#		steps=c("prepareSGP", "analyzeSGP", "combineSGP", "visualizeSGP", "outputSGP"),
-		steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
+		steps=c("prepareSGP", "analyzeSGP", "combineSGP", "visualizeSGP", "outputSGP"),
+#		steps=c("prepareSGP", "analyzeSGP", "combineSGP", "outputSGP"),
 		sgp.percentiles=TRUE,
 		sgp.projections=TRUE,
 		sgp.projections.lagged=TRUE,
@@ -28,7 +28,8 @@ WIDA_WA_SGP <- abcSGP(
 		sgp.projections.lagged.baseline=TRUE,
 		get.cohort.data.info=TRUE,
 		sgp.target.scale.scores=TRUE,
-		plot.types=c("growthAchievementPlot", "studentGrowthPlot"),
+#		plot.types=c("growthAchievementPlot", "studentGrowthPlot"),
+		plot.types=c("studentGrowthPlot"),
 		sgPlot.demo.report=TRUE,
 		parallel.config=list(BACKEND="PARALLEL", WORKERS=list(PERCENTILES=4, BASELINE_PERCENTILES=4, PROJECTIONS=4, LAGGED_PROJECTIONS=4, SGP_SCALE_SCORE_TARGETS=4, GA_PLOTS=1, SG_PLOTS=1)))
 
